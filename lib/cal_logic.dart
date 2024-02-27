@@ -54,6 +54,11 @@ class Calculator {
   execute(Command cmd){
     cmd.apply(stack);
   }
+
+  clear() {
+    stack = [];
+    operation = [];
+  }
 }
 
 abstract class Command {

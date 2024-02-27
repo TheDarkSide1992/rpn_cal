@@ -44,11 +44,13 @@ class Calculator {
     operation.add(cmd);
   }
 
-  num calculate(){
+  String calculate(){
+
+    //addcommand(AddCommand());
 
     operation.forEach((opp) => execute(opp));
 
-    return result;
+    return "$result";
     //print("result of all operations Is == $result");
   }
 
@@ -73,7 +75,6 @@ class AddCommand implements Command {
     stack.removeLast();
 
     result = result + addition;
-    print("(+) $addition current = $result");
   }
 }
 
@@ -84,7 +85,6 @@ class SubCommand implements Command {
     stack.removeLast();
 
     result = result - addition;
-    print("(-) $addition current = $result");
   }
 }
 
@@ -95,7 +95,6 @@ class MultiCommand implements Command {
     stack.removeLast();
 
     result = result * addition;
-    print("(*) $addition current = $result");
   }
 }
 
@@ -106,7 +105,6 @@ class DivideCommand implements Command {
     stack.removeLast();
 
     result = result / addition;
-    print("(/) $addition current = $result");
   }
 }
 

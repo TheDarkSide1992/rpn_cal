@@ -9,35 +9,30 @@ class CalculatorScreen extends StatefulWidget {
 }
 
 class _CalculatorScreenState extends State<CalculatorScreen> {
-
   var call = Calculator();
 
-  var commandList ="Default";
-  var numberList = "Default";
-  var currentValue = "Default";
-  var endResult="Default";
+  var commandList = "";
+  var numberList = "";
+  var currentValue = "";
+  var endResult = "";
 
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
     return Scaffold(
-        appBar: AppBar(title: Text(currentValue)),
-        body:
-        Container(
+        appBar: AppBar(title: Text(endResult)),
+        body: Container(
           child: Column(
             children: [
-              Row(children: [
-                Text(currentValue)
-              ],),
-              Row(children: [
-                Text(commandList)
-              ],),
-              Row(children: [
-                Text(numberList)
-              ],),
-              Row(children: [
-                Text(endResult)
-              ],),
+              Row(
+                children: [Text(currentValue)],
+              ),
+              Row(
+                children: [Text(commandList)],
+              ),
+              Row(
+                children: [Text(numberList)],
+              ),
               Row(children: [
                 _numbtn(1),
                 _numbtn(2),
@@ -72,48 +67,65 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
 
   Widget _numbtn(int num) {
     return OutlinedButton(
-      onPressed: () => currentValue += num.toString(),
+      onPressed: () {
+        setState(() {
+          currentValue += num.toString();
+        });
+      },
       child: Text(num.toString()),
     );
   }
 
   Widget _calculate() {
     return OutlinedButton(
-      onPressed: () => endResult = call.calculate().toString(),
+      onPressed: () {
+        setState(() {
+          endResult = call.calculate();
+        });
+      },
       child: Text("Calcuclate"),
     );
   }
 
-
   Widget _combtn(Command command, String pretty) {
-
     return OutlinedButton(
-      onPressed: () => _command(command, pretty),
+      onPressed: () {
+        setState(() {
+          _command(command, pretty);
+        });
+      },
       child: Text(pretty),
     );
   }
 
   Widget _enter() {
     return OutlinedButton(
-      onPressed: () => _enterlogic(),
+      onPressed: () {
+        setState(() {
+          _enterlogic();
+        });
+      },
       child: Text("Enter"),
     );
   }
 
-
   Widget _clear() {
     return OutlinedButton(
-      onPressed: () => _clearlogic(),
+      onPressed: () {
+        setState(() {
+          _clearlogic();
+        });
+      },
       child: Text("Clear"),
     );
   }
 
-  _command(Command command, String pretty) async{
+  _command(Command command, String pretty) async {
     commandList = pretty + commandList;
     call.addcommand(command);
   }
 
-  _enterlogic() async{
+  _enterlogic() async {
     num number = currentValue.isNotEmpty ? int.parse(currentValue.trim()) : 0;
     numberList = numberList + "  " + currentValue.trim();
     currentValue = "";
@@ -121,11 +133,11 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
     call.push(number);
   }
 
-  _clearlogic() async{
-    commandList="";
-    numberList="";
-    currentValue="";
-    endResult="";
+  _clearlogic() async {
+    commandList = "";
+    numberList = "";
+    currentValue = "";
+    endResult = "";
 
     call.clear();
   }

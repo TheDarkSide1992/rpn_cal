@@ -44,11 +44,12 @@ class Calculator {
     operation.add(cmd);
   }
 
-  void calculate(){
+  num calculate(){
 
     operation.forEach((opp) => execute(opp));
 
-    print("result of all operations Is == $result");
+    return result;
+    //print("result of all operations Is == $result");
   }
 
   execute(Command cmd){

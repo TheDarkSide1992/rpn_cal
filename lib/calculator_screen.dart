@@ -12,16 +12,32 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
 
   var call = Calculator();
 
-  var currentValue = "";
+  var commandList ="Default";
+  var numberList = "Default";
+  var currentValue = "Default";
+  var endResult="Default";
 
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
     return Scaffold(
         appBar: AppBar(title: Text(currentValue)),
-        body: Container(
+        body:
+        Container(
           child: Column(
             children: [
+              Row(children: [
+                Text(currentValue)
+              ],),
+              Row(children: [
+                Text(commandList)
+              ],),
+              Row(children: [
+                Text(numberList)
+              ],),
+              Row(children: [
+                Text(endResult)
+              ],),
               Row(children: [
                 _numbtn(1),
                 _numbtn(2),
@@ -46,6 +62,9 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                 _enter(),
                 _combtn(DivideCommand(), "/")
               ]),
+              Row(children: [
+                _calculate(),
+              ]),
             ],
           ),
         ));
@@ -58,25 +77,56 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
     );
   }
 
-  Widget _combtn(Command command, String pretty) {
+  Widget _calculate() {
     return OutlinedButton(
-      onPressed: () => {},
+      onPressed: () => endResult = call.calculate().toString(),
+      child: Text("Calcuclate"),
+    );
+  }
+
+
+  Widget _combtn(Command command, String pretty) {
+
+    return OutlinedButton(
+      onPressed: () => _command(command, pretty),
       child: Text(pretty),
     );
   }
 
   Widget _enter() {
-    num number = currentValue.isNotEmpty ? int.parse(currentValue.trim()) : 0;
     return OutlinedButton(
-      onPressed: () => call.push(number),
+      onPressed: () => _enterlogic(),
       child: Text("Enter"),
     );
   }
 
+
   Widget _clear() {
     return OutlinedButton(
-      onPressed: () => call.clear(),
+      onPressed: () => _clearlogic(),
       child: Text("Clear"),
     );
+  }
+
+  _command(Command command, String pretty) async{
+    commandList = pretty + commandList;
+    call.addcommand(command);
+  }
+
+  _enterlogic() async{
+    num number = currentValue.isNotEmpty ? int.parse(currentValue.trim()) : 0;
+    numberList = numberList + "  " + currentValue.trim();
+    currentValue = "";
+
+    call.push(number);
+  }
+
+  _clearlogic() async{
+    commandList="";
+    numberList="";
+    currentValue="";
+    endResult="";
+
+    call.clear();
   }
 }

@@ -46,12 +46,16 @@ class Calculator {
 
   String calculate(){
 
-    //addcommand(AddCommand());
+    result = stack.last;
+    stack.removeLast();
 
-    operation.forEach((opp) => execute(opp));
+    for (var opp in operation) {
+      opp.apply(stack);
+    }
 
-    return "$result";
     //print("result of all operations Is == $result");
+    //return "Result";
+    return "result == $result";
   }
 
   execute(Command cmd){
@@ -59,6 +63,7 @@ class Calculator {
   }
 
   clear() {
+    result = 0;
     stack = [];
     operation = [];
   }

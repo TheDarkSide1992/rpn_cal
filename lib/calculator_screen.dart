@@ -33,6 +33,9 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
               Row(
                 children: [Text(numberList)],
               ),
+              Row(
+                children: [Text(endResult)],
+              ),
               Row(children: [
                 _numbtn(1),
                 _numbtn(2),
@@ -80,7 +83,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
     return OutlinedButton(
       onPressed: () {
         setState(() {
-          endResult = call.calculate();
+          _calculateResult();
         });
       },
       child: Text("Calcuclate"),
@@ -131,6 +134,10 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
     currentValue = "";
 
     call.push(number);
+  }
+
+  _calculateResult() async {
+    endResult = call.calculate();
   }
 
   _clearlogic() async {

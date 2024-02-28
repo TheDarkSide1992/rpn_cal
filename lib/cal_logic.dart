@@ -2,32 +2,6 @@ late num result;
 
 void main() {
   result = 0;
-
-  var call = Calculator();
-/*
-  //AddCommand
-  //SubCommand
-  //MultiCommand
-  //DivideCommand
-
-  call.push(3); //1
-  call.push(8); //2
-  call.push(2); //3
-  call.push(5); //4
-  call.push(5); //5
-  call.push(6); //6
-  call.push(20); //7
-
-  call.addcommand(AddCommand()); //7
-  call.addcommand(MultiCommand()); //6
-  call.addcommand(DivideCommand()); //5
-  call.addcommand(AddCommand()); //4
-  call.addcommand(AddCommand()); //3
-  call.addcommand(SubCommand()); //2
-  call.addcommand(AddCommand()); //1
-  //Write in reverse order
-
-  call.calculate(); */
 }
 
 
@@ -37,7 +11,6 @@ class Calculator {
 
   void push(num value){
     stack.add(value);
-
   }
 
   void addcommand(Command cmd){
@@ -45,7 +18,6 @@ class Calculator {
   }
 
   String calculate(){
-
     result = stack.last;
     stack.removeLast();
 
@@ -53,13 +25,7 @@ class Calculator {
       opp.apply(stack);
     }
 
-    //print("result of all operations Is == $result");
-    //return "Result";
     return "result == $result";
-  }
-
-  execute(Command cmd){
-    cmd.apply(stack);
   }
 
   clear() {

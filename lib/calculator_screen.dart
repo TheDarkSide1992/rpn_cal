@@ -23,44 +23,73 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
         appBar: AppBar(title: Text(endResult)),
         body: Container(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Row(
-                children: [Text(currentValue)],
+                children: [
+                  Container(width: 30, color: Colors.transparent),
+                  Text(currentValue),
+                ],
               ),
               Row(
-                children: [Text(commandList)],
+                children: [
+                  Container(width: 30, color: Colors.transparent),
+                  Text(commandList),
+                ],
               ),
               Row(
-                children: [Text(numberList)],
+                children: [
+                  Container(width: 30, color: Colors.transparent),
+                  Text(numberList),
+                ],
               ),
-              Row(
-                children: [Text(endResult)],
-              ),
+              const Divider(),
               Row(children: [
+                Container(width: 35, color: Colors.transparent),
                 _numbtn(1),
+                Container(width: 10, color: Colors.transparent),
                 _numbtn(2),
+                Container(width: 10, color: Colors.transparent),
                 _numbtn(3),
+                Container(width: 35, color: Colors.transparent),
                 _combtn(AddCommand(), "+")
               ]),
+              Container(height: 10, color: Colors.transparent),
               Row(children: [
+                Container(width: 35, color: Colors.transparent),
                 _numbtn(4),
+                Container(width: 10, color: Colors.transparent),
                 _numbtn(5),
+                Container(width: 10, color: Colors.transparent),
                 _numbtn(6),
+                Container(width: 35, color: Colors.transparent),
                 _combtn(SubCommand(), "-")
               ]),
+              Container(height: 10, color: Colors.transparent),
               Row(children: [
+                Container(width: 35, color: Colors.transparent),
                 _numbtn(7),
+                Container(width: 10, color: Colors.transparent),
                 _numbtn(8),
+                Container(width: 10, color: Colors.transparent),
                 _numbtn(9),
+                Container(width: 35, color: Colors.transparent),
                 _combtn(MultiCommand(), "*")
               ]),
+              Container(height: 10, color: Colors.transparent),
               Row(children: [
+                Container(width: 10, color: Colors.transparent),
                 _clear(),
+                Container(width: 10, color: Colors.transparent),
                 _numbtn(0),
+                Container(width: 10, color: Colors.transparent),
                 _enter(),
+                Container(width: 10, color: Colors.transparent),
                 _combtn(DivideCommand(), "/")
               ]),
+              Container(height: 10, color: Colors.transparent),
               Row(children: [
+                Container(width: 70, color: Colors.transparent),
                 _calculate(),
               ]),
             ],
@@ -138,6 +167,12 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
 
   _calculateResult() async {
     endResult = call.calculate();
+
+    commandList = "";
+    numberList = "";
+    currentValue = "";
+
+    call.clear();
   }
 
   _clearlogic() async {

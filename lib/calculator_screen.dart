@@ -51,7 +51,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                 _numbtn(2),
                 Container(width: 10, color: Colors.transparent),
                 _numbtn(3),
-                Container(width: 35, color: Colors.transparent),
+                Container(width: 15, color: Colors.transparent),
                 _combtn(AddCommand(), "+")
               ]),
               Container(height: 10, color: Colors.transparent),
@@ -62,7 +62,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                 _numbtn(5),
                 Container(width: 10, color: Colors.transparent),
                 _numbtn(6),
-                Container(width: 35, color: Colors.transparent),
+                Container(width: 15, color: Colors.transparent),
                 _combtn(SubCommand(), "-")
               ]),
               Container(height: 10, color: Colors.transparent),
@@ -73,19 +73,19 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                 _numbtn(8),
                 Container(width: 10, color: Colors.transparent),
                 _numbtn(9),
-                Container(width: 35, color: Colors.transparent),
-                _combtn(MultiCommand(), "*")
+                Container(width: 15, color: Colors.transparent),
+                _combtn(MultiCommand(), "×")
               ]),
               Container(height: 10, color: Colors.transparent),
               Row(children: [
-                Container(width: 10, color: Colors.transparent),
+                Container(width: 35, color: Colors.transparent),
                 _clear(),
                 Container(width: 10, color: Colors.transparent),
                 _numbtn(0),
                 Container(width: 10, color: Colors.transparent),
                 _enter(),
-                Container(width: 10, color: Colors.transparent),
-                _combtn(DivideCommand(), "/")
+                Container(width: 13, color: Colors.transparent),
+                _combtn(DivideCommand(), "÷")
               ]),
               Container(height: 10, color: Colors.transparent),
               Row(children: [
@@ -137,7 +137,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
           _enterlogic();
         });
       },
-      child: Text("Enter"),
+      child: Text("↲"),
     );
   }
 
@@ -148,7 +148,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
           _clearlogic();
         });
       },
-      child: Text("Clear"),
+      child: Text("C"),
     );
   }
 

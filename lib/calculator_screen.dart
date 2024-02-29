@@ -20,7 +20,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
     return Scaffold(
-        appBar: AppBar(title: Text(endResult)),
+        appBar: AppBar(title: Text(key: const Key("endResult"),endResult)),
         body: Container(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -28,19 +28,19 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
               Row(
                 children: [
                   Container(width: 15, color: Colors.transparent),
-                  Text(currentValue),
+                  Text(key: const Key("currentValue"),currentValue),
                 ],
               ),
               Row(
                 children: [
                   Container(width: 15, color: Colors.transparent),
-                  Text(commandList),
+                  Text(key: const Key("commandList"),commandList),
                 ],
               ),
               Row(
                 children: [
                   Container(width: 15, color: Colors.transparent),
-                  Text(numberList),
+                  Text(key: const Key("numberList"),numberList),
                 ],
               ),
               const Divider(),
@@ -110,6 +110,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
 
   Widget _calculate() {
     return OutlinedButton(
+      key: const Key("caalculateBtn"),
       onPressed: () {
         setState(() {
           _calculateResult();

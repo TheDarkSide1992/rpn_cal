@@ -1,7 +1,6 @@
 late num result;
 
 void main() {
-  result = 0;
 }
 
 
@@ -18,14 +17,13 @@ class Calculator {
   }
 
   String calculate(){
-    result = stack.last;
-    stack.removeLast();
 
     for (var opp in operation) {
       opp.apply(stack);
     }
 
-    return "result == $result";
+    var result = stack.last;
+    return "= $result";
   }
 
   clear() {
@@ -42,40 +40,48 @@ abstract class Command {
 class AddCommand implements Command {
   @override
   void apply(List<num> stack) {
-    num addition = stack.last;
+    num num1 = stack.last;
+    stack.removeLast();
+    num num2 = stack.last;
     stack.removeLast();
 
-    result = result + addition;
+    stack.add(num1 + num2);
   }
 }
 
 class SubCommand implements Command {
   @override
   void apply(List<num> stack) {
-    num addition = stack.last;
+    num num1 = stack.last;
+    stack.removeLast();
+    num num2 = stack.last;
     stack.removeLast();
 
-    result = result - addition;
+    stack.add(num1 - num2);
   }
 }
 
 class MultiCommand implements Command {
   @override
   void apply(List<num> stack) {
-    num addition = stack.last;
+    num num1 = stack.last;
+    stack.removeLast();
+    num num2 = stack.last;
     stack.removeLast();
 
-    result = result * addition;
+    stack.add(num1 * num2);
   }
 }
 
 class DivideCommand implements Command {
   @override
   void apply(List<num> stack) {
-    num addition = stack.last;
+    num num1 = stack.last;
+    stack.removeLast();
+    num num2 = stack.last;
     stack.removeLast();
 
-    result = result / addition;
+    stack.add(num1 / num2);
   }
 }
 

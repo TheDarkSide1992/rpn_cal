@@ -153,7 +153,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
   }
 
   _command(Command command, String pretty) async {
-    commandList = pretty + commandList;
+    commandList = pretty + " " +  commandList;
     call.addcommand(command);
   }
 
@@ -166,8 +166,8 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
   }
 
   _calculateResult() async {
-    endResult = call.calculate();
-
+    var res = call.calculate();
+    endResult = "= $res";
     commandList = "";
     numberList = "";
     currentValue = "";

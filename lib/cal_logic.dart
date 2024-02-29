@@ -16,14 +16,13 @@ class Calculator {
     operation.add(cmd);
   }
 
-  String calculate(){
+  num calculate(){
 
     for (var opp in operation) {
       opp.apply(stack);
     }
 
-    var result = stack.last;
-    return "= $result";
+    return stack.last;
   }
 
   clear() {

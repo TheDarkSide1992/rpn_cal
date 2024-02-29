@@ -27,25 +27,25 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
             children: [
               Row(
                 children: [
-                  Container(width: 30, color: Colors.transparent),
+                  Container(width: 15, color: Colors.transparent),
                   Text(currentValue),
                 ],
               ),
               Row(
                 children: [
-                  Container(width: 30, color: Colors.transparent),
+                  Container(width: 15, color: Colors.transparent),
                   Text(commandList),
                 ],
               ),
               Row(
                 children: [
-                  Container(width: 30, color: Colors.transparent),
+                  Container(width: 15, color: Colors.transparent),
                   Text(numberList),
                 ],
               ),
               const Divider(),
               Row(children: [
-                Container(width: 35, color: Colors.transparent),
+                Container(width: 15, color: Colors.transparent),
                 _numbtn(1),
                 Container(width: 10, color: Colors.transparent),
                 _numbtn(2),
@@ -56,7 +56,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
               ]),
               Container(height: 10, color: Colors.transparent),
               Row(children: [
-                Container(width: 35, color: Colors.transparent),
+                Container(width: 15, color: Colors.transparent),
                 _numbtn(4),
                 Container(width: 10, color: Colors.transparent),
                 _numbtn(5),
@@ -67,7 +67,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
               ]),
               Container(height: 10, color: Colors.transparent),
               Row(children: [
-                Container(width: 35, color: Colors.transparent),
+                Container(width: 15, color: Colors.transparent),
                 _numbtn(7),
                 Container(width: 10, color: Colors.transparent),
                 _numbtn(8),
@@ -78,7 +78,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
               ]),
               Container(height: 10, color: Colors.transparent),
               Row(children: [
-                Container(width: 35, color: Colors.transparent),
+                Container(width: 15, color: Colors.transparent),
                 _clear(),
                 Container(width: 10, color: Colors.transparent),
                 _numbtn(0),
@@ -89,7 +89,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
               ]),
               Container(height: 10, color: Colors.transparent),
               Row(children: [
-                Container(width: 70, color: Colors.transparent),
+                Container(width: 55, color: Colors.transparent),
                 _calculate(),
               ]),
             ],

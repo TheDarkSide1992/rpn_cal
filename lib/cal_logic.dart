@@ -1,5 +1,3 @@
-late num result;
-
 void main() {
 }
 
@@ -26,7 +24,6 @@ class Calculator {
   }
 
   clear() {
-    result = 0;
     stack = [];
     operation = [];
   }

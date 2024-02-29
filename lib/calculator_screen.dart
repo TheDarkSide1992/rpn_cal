@@ -159,7 +159,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
 
   _enterlogic() async {
     num number = currentValue.isNotEmpty ? int.parse(currentValue.trim()) : 0;
-    numberList = numberList + "  " + currentValue.trim();
+    numberList = numberList + "  " + "$number";
     currentValue = "";
 
     call.push(number);

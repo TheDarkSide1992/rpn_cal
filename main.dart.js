@@ -53054,7 +53054,7 @@ s=A.it(q.w,B.IJ)
 r=t.nA
 return new A.qJ(new A.nA(s,new A.EC(p,p,1/0,56),p),A.bx(p,A.aa7(A.a([A.iq(A.a([A.bx(p,p,B.p,p,p,p,p,15),A.it(q.r,B.II)],r),B.an,B.ar),A.iq(A.a([A.bx(p,p,B.p,p,p,p,p,15),A.it(q.e,B.IH)],r),B.an,B.ar),A.iq(A.a([A.bx(p,p,B.p,p,p,p,p,15),A.it(q.f,B.IK)],r),B.an,B.ar),B.wX,A.iq(A.a([A.bx(p,p,B.p,p,p,p,p,15),q.fa(1),A.bx(p,p,B.p,p,p,p,p,10),q.fa(2),A.bx(p,p,B.p,p,p,p,p,10),q.fa(3),A.bx(p,p,B.p,p,p,p,p,15),q.ny(new A.vg(),"+")],r),B.an,B.ar),A.bx(p,p,B.p,p,10,p,p,p),A.iq(A.a([A.bx(p,p,B.p,p,p,p,p,15),q.fa(4),A.bx(p,p,B.p,p,p,p,p,10),q.fa(5),A.bx(p,p,B.p,p,p,p,p,10),q.fa(6),A.bx(p,p,B.p,p,p,p,p,15),q.ny(new A.Ar(),"-")],r),B.an,B.ar),A.bx(p,p,B.p,p,10,p,p,p),A.iq(A.a([A.bx(p,p,B.p,p,p,p,p,15),q.fa(7),A.bx(p,p,B.p,p,p,p,p,10),q.fa(8),A.bx(p,p,B.p,p,p,p,p,10),q.fa(9),A.bx(p,p,B.p,p,p,p,p,15),q.ny(new A.y8(),"\xd7")],r),B.an,B.ar),A.bx(p,p,B.p,p,10,p,p,p),A.iq(A.a([A.bx(p,p,B.p,p,p,p,p,15),q.Kw(0),A.bx(p,p,B.p,p,p,p,p,10),q.fa(0),A.bx(p,p,B.p,p,p,p,p,10),q.LC(),A.bx(p,p,B.p,p,p,p,p,13),q.ny(new A.wF(),"\xf7")],r),B.an,B.ar),A.bx(p,p,B.p,p,10,p,p,p),A.iq(A.a([A.bx(p,p,B.p,p,p,p,p,55),q.K9()],r),B.an,B.ar)],r),B.nG),p,p,p,p,p,p),p)},
 fa(a){return A.yw(A.it(B.f.k(a),null),null,new A.U9(this,a))},
-K9(){return A.yw(A.it("Calcuclate",null),B.IG,new A.U1(this))},
+K9(){return A.yw(A.it("Calculate",null),B.IG,new A.U1(this))},
 ny(a,b){return A.yw(A.it(b,null),null,new A.U5(this,a,b))},
 LC(){return A.yw(A.it("\u21b2",null),null,new A.U7(this))},
 Kw(a){return A.yw(A.it("C",null),null,new A.U3(this))},

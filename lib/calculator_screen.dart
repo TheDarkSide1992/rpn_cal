@@ -116,7 +116,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
           _calculateResult();
         });
       },
-      child: Text("Calcuclate"),
+      child: Text("Calculate"),
     );
   }
 

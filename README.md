@@ -1,8 +1,7 @@
 # rpn_calculator
 
 # Creators
-## This project wass made as a reverse polish notation calculater for as a school project ,
-## in regard to flutter mobile development
+## This project wass made as a reverse polish notation calculater for as a school project , in regard to flutter mobile development
 
 - Made for EASV
 

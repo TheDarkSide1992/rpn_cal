@@ -1,5 +1,21 @@
 # rpn_calculator
 
+# Creators
+## This project wass made as a reverse polish notation calculater for as a school project ,
+## in regard to flutter mobile development
+
+- Made for EASV
+
+  To use the live version use the github.io page link in the about me section
+
+
+
+
+
+
+
+______________________________________________________________________________________________________
+
 A new Flutter project.
 
 ## Getting Started
